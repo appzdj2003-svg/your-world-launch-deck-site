@@ -1,0 +1,29 @@
+name: data
+# schedule registered by a user commit (scheduled runs need a non-bot actor)
+# Refreshes data/launches.json + data/meta.json for the Launch Deck site. Public repo, so Actions minutes are free.
+# No secrets: LL2 (The Space Devs) and NOAA METAR are public and keyless. The fetch script counts its LL2 calls
+# and stays under LL2's free 15 calls/hour (see pipeline/fetch.py).
+on:
+  schedule:
+    - cron: "2,17,32,47 * * * *"   # every 15 min: regular refresh
+    - cron: "*/5 * * * *"          # every 5 min: only does work inside a near-launch window
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: data
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v5
+        with: { fetch-depth: 1 }
+      - name: Fetch
+        run: |
+          mode=scheduled
+          [ "${{ github.event.schedule }}" = "*/5 * * * *" ] && mode=near
+          python3 pipeline/fetch.py data "$mode"
+      - name: Publish data/ (single orphan commit, safe against a concurrent site deploy)
+        run: pipeline/publish.sh . "data $(date -u +%FT%TZ)" data
