@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-# Publish the site as ONE orphan commit on main (no history bloat), without losing a concurrent update.
+# Publish the site as a new commit on top of the current main, without losing a concurrent update.
+# (Normal parented commits: git stores the JSON changes as small deltas, and GitHub keeps the scheduled
+#  data workflow registered. Orphan force-pushes appeared to stop the schedule from ever firing.)
 # Usage: publish.sh <site_dir> <message> <what>   what = data (replace only data/) | all (replace everything but data/)
 # Builds the new tree on top of the CURRENT remote main and pushes with --force-with-lease; retries if main moved.
 set -euo pipefail
@@ -17,7 +19,7 @@ for try in 1 2 3; do
   fi
   tree=$(git write-tree); rm -f "$GIT_INDEX_FILE"; unset GIT_INDEX_FILE
   if [ "$tree" = "$(git rev-parse "$base^{tree}")" ]; then echo "no changes"; exit 0; fi
-  c=$(git commit-tree "$tree" -m "$msg")
+  c=$(git commit-tree "$tree" -p "$base" -m "$msg")
   if git push -q --force-with-lease="main:$base" origin "$c:refs/heads/main"; then echo "published: $msg"; exit 0; fi
   echo "main moved, retrying ($try)"; sleep 5
 done
