@@ -44,7 +44,7 @@
 <div id="simPill" class="simpill" role="status" aria-live="polite" hidden><span class="dot"></span><b id="simPillState">SIM · not live</b><button id="simRestart" aria-label="Restart the practice run" title="Restart">↻</button><button id="simExit" aria-label="End practice run and go back to the real countdown" title="Back to the real countdown">✕</button></div>
 <p id="callout" class="callout" aria-live="assertive"></p>
 <div id="readout" class="readout" hidden><div><span>ALT</span><b id="rAlt">0</b><i>km</i></div><div><span>SPEED</span><b id="rVel">0</b><i>km/h</i></div><div><span>DOWNRANGE</span><b id="rDown">0</b><i>km</i></div><div><span>G-FORCE</span><b id="rG">1.0</b><i>g</i></div><em>SIMULATED · not live telemetry</em></div>
-<div class="actions"><button id="watchBtn" class="btn" hidden>▶ Watch the real webcast</button><span id="syncBox" hidden><button id="syncBtn" class="btn ghost">Sync to webcast liftoff</button><button id="syncReset" class="btn ghost" hidden>Reset</button></span><button id="replayBtn" class="btn ghost" hidden>Replay (simulated)</button></div>
+<div class="actions"><button id="watchBtn" class="btn" hidden>▶ Watch the real webcast</button><button id="streamBtn" class="btn ghost" aria-label="Open the mini-player for a live stream">📺 Stream</button><span id="syncBox" hidden><button id="syncBtn" class="btn ghost">Sync to webcast liftoff</button><button id="syncReset" class="btn ghost" hidden>Reset</button></span><button id="replayBtn" class="btn ghost" hidden>Replay (simulated)</button></div>
 <div id="webcast" hidden></div>
 <div id="panel" hidden></div>
 <p class="credit"><span id="updated"></span><br>Launch data: <a href="https://thespacedevs.com/" target="_blank" rel="noopener">The Space Devs</a> · <a href="credits.html">Credits</a> · <a href="privacy.html">Privacy</a></p>
@@ -63,7 +63,7 @@
 //   and cannot carry a token yet. This is a known gap until the app appends ?t=.
 // Note: this is a static site, so the gate keeps casual visitors out; it is not server-side protection.
 (() => {
-const C = {"salt":"3bcea1007d453ab0eddf74fd9e6b8ecc","iter":150000,"hash":"5850a341fc7464dd0517635df19b880047112d86552d47468b2ac75a312a0395","worker":"https://launch-deck-access.yourworldapps.workers.dev"}, MAIN = "js/main-WANIUVHM.js", KEY = "ld.access";
+const C = {"salt":"3bcea1007d453ab0eddf74fd9e6b8ecc","iter":150000,"hash":"5850a341fc7464dd0517635df19b880047112d86552d47468b2ac75a312a0395","worker":"https://launch-deck-access.yourworldapps.workers.dev"}, MAIN = "js/main-6ZA7HXUV.js", KEY = "ld.access";
 const Q = new URLSearchParams(location.search), root = document.documentElement;
 const go = () => { root.classList.remove("locked"); const g = document.getElementById("gate"); if (g) g.remove(); import("./" + MAIN); };
 const hex = (b) => [...new Uint8Array(b)].map(x => x.toString(16).padStart(2, "0")).join("");
