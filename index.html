@@ -63,7 +63,7 @@
 //   and cannot carry a token yet. This is a known gap until the app appends ?t=.
 // Note: this is a static site, so the gate keeps casual visitors out; it is not server-side protection.
 (() => {
-const C = {"salt":"3bcea1007d453ab0eddf74fd9e6b8ecc","iter":150000,"hash":"5850a341fc7464dd0517635df19b880047112d86552d47468b2ac75a312a0395","worker":"https://launch-deck-access.yourworldapps.workers.dev"}, MAIN = "js/main-EVCEHRL7.js", KEY = "ld.access";
+const C = {"salt":"3bcea1007d453ab0eddf74fd9e6b8ecc","iter":150000,"hash":"5850a341fc7464dd0517635df19b880047112d86552d47468b2ac75a312a0395","worker":"https://launch-deck-access.yourworldapps.workers.dev"}, MAIN = "js/main-ICTPHL4B.js", KEY = "ld.access";
 const Q = new URLSearchParams(location.search), root = document.documentElement;
 const go = () => { root.classList.remove("locked"); const g = document.getElementById("gate"); if (g) g.remove(); import("./" + MAIN); };
 const hex = (b) => [...new Uint8Array(b)].map(x => x.toString(16).padStart(2, "0")).join("");
