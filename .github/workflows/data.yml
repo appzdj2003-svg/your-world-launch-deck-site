@@ -1,5 +1,5 @@
 name: data
-# schedule registered by a user commit (scheduled runs need a non-bot actor)
+# schedule registered by a user commit (scheduled runs need a non-bot actor) - 2026-10-20
 # Refreshes data/launches.json + data/meta.json for the Launch Deck site. Public repo, so Actions minutes are free.
 # No secrets: LL2 (The Space Devs) and NOAA METAR are public and keyless. The fetch script counts its LL2 calls
 # and stays under LL2's free 15 calls/hour (see pipeline/fetch.py).
