@@ -29,6 +29,7 @@
 <p id="shakeNote" class="dim" hidden>Shake is off because reduced motion is on.</p>
 <label class="row"><span>Breathing sounds at high g (inside)</span><input id="breath" type="checkbox"></label>
 <button id="practiceBtn" class="btn ghost">▶ Practice run (fake clock, from T-15 s)</button>
+<button id="sfAnyBtn" class="btn ghost" aria-label="Starship static fire, simulated. Not a real event.">🔥 Starship static fire (sim)</button>
 <p id="rumbleNote" class="dim"></p>
 </div>
 <div id="tierPop" class="pop" hidden><p class="dim">Quality</p><button data-t="auto">Auto</button><button data-t="ultra">Ultra (3D, all effects)</button><button data-t="standard">Standard (3D)</button><button data-t="lite">Lite (2D, lightest)</button></div>
@@ -63,7 +64,7 @@
 //   and cannot carry a token yet. This is a known gap until the app appends ?t=.
 // Note: this is a static site, so the gate keeps casual visitors out; it is not server-side protection.
 (() => {
-const C = {"salt":"3bcea1007d453ab0eddf74fd9e6b8ecc","iter":150000,"hash":"5850a341fc7464dd0517635df19b880047112d86552d47468b2ac75a312a0395","worker":"https://launch-deck-access.yourworldapps.workers.dev"}, MAIN = "js/main-CXWCVPVT.js", KEY = "ld.access";
+const C = {"salt":"3bcea1007d453ab0eddf74fd9e6b8ecc","iter":150000,"hash":"5850a341fc7464dd0517635df19b880047112d86552d47468b2ac75a312a0395","worker":"https://launch-deck-access.yourworldapps.workers.dev"}, MAIN = "js/main-QZZGG4NI.js", KEY = "ld.access";
 const Q = new URLSearchParams(location.search), root = document.documentElement;
 const go = () => { root.classList.remove("locked"); const g = document.getElementById("gate"); if (g) g.remove(); import("./" + MAIN); };
 const hex = (b) => [...new Uint8Array(b)].map(x => x.toString(16).padStart(2, "0")).join("");
