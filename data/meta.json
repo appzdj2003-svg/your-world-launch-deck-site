@@ -1,1 +1,1 @@
-{"prevFetchedAt": "2026-11-11T10:27:11Z", "lastAttempt": "2026-11-11T10:59:50Z", "lastOk": "2026-11-11T10:59:50Z", "lastError": null, "count": 38, "mode": "near", "ll2Calls": ["2026-11-11T10:27:11Z", "2026-11-11T10:27:11Z", "2026-11-11T10:59:50Z"], "ll2CallsLastHour": 3}
+{"prevFetchedAt": "2026-11-11T17:59:27Z", "lastAttempt": "2026-11-11T17:59:27Z", "lastOk": "2026-11-11T17:59:27Z", "lastError": null, "count": 37, "mode": "scheduled", "ll2Calls": ["2026-11-11T17:59:27Z", "2026-11-11T17:59:27Z"], "ll2CallsLastHour": 2}
