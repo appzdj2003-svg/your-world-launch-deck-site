@@ -1,1 +1,1 @@
-{"prevFetchedAt": "2026-11-18T16:27:45Z", "lastAttempt": "2026-11-18T23:01:43Z", "lastOk": "2026-11-18T16:27:45Z", "lastError": "LL2 upcoming TimeoutError: The read operation timed out", "count": 38, "mode": "scheduled", "ll2Calls": ["2026-11-18T23:01:43Z"], "ll2CallsLastHour": 1}
+{"prevFetchedAt": "2026-11-19T04:05:28Z", "lastAttempt": "2026-11-19T04:05:28Z", "lastOk": "2026-11-19T04:05:28Z", "lastError": null, "count": 37, "mode": "scheduled", "ll2Calls": ["2026-11-19T04:05:28Z", "2026-11-19T04:05:28Z"], "ll2CallsLastHour": 2}
